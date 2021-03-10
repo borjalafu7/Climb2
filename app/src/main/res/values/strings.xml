@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Climb</string>
+    <string name="texto_subrayado"><u>aquí</u></string>
+    <string name="title_activity_main__page">MainActivity</string>
+    <string name="title_inventario">Inventario</string>
+    <string name="title_mapa">Mapa</string>
+    <string name="title_rutas">Rutas</string>
+    <string name="title_activity_actividad_mapa">Map</string>
+</resources>

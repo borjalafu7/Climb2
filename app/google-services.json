@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "232323325737",
+    "project_id": "climb-39b68",
+    "storage_bucket": "climb-39b68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232323325737:android:d756c76a3b2ba44587e138",
+        "android_client_info": {
+          "package_name": "com.borjalapa.climb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232323325737-hf6730og5nuk4fq3ajo40ct8b14u4o1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNIvll1cN8SFlIA_lkbSvunniLMa-ZsX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232323325737-hf6730og5nuk4fq3ajo40ct8b14u4o1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
