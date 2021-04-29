@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="20dip"
+    android:orientation="vertical">
+
+    <EditText
+
+        android:id="@+id/nombreruta"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Nombre"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/descripcionruta"
+        android:layout_marginTop="15dip"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Descripcion"
+        android:inputType="textLongMessage" />
+
+    <EditText
+        android:id="@+id/puebloruta"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Pueblo"
+        android:inputType="text"
+        android:layout_marginTop="15dip"
+        android:layout_marginBottom="30dip" />
+
+    <EditText
+        android:id="@+id/ciudadruta"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Ciudad"
+        android:inputType="text"
+        android:layout_marginTop="15dip"
+        android:layout_marginBottom="30dip" />
+
+    <EditText
+        android:id="@+id/como_llegar_ruta"
+        android:layout_marginTop="15dip"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Descripcion"
+        android:inputType="textLongMessage" />
+
+    <EditText
+        android:id="@+id/itemsruta"
+        android:layout_marginTop="15dip"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Utensilios"
+        android:inputType="textLongMessage" />
+
+    <Button
+        android:id="@+id/btnAddRuta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/purple_700"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:text="Añadir" />
+
+    <TextView
+        android:id="@+id/register_error"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:layout_marginBottom="40dip"
+        android:gravity="center"
+        android:textSize="20dip"
+        android:textColor="#0b84aa"/>
+
+
+</LinearLayout>

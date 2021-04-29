@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="20dip"
+    android:orientation="vertical">
+
+    <EditText
+
+        android:id="@+id/txtNombre"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Nombre"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtDescripcion"
+        android:layout_marginTop="15dip"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Descripcion"
+        android:inputType="textLongMessage" />
+
+    <EditText
+        android:id="@+id/txtCantidad"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Cantidad"
+        android:inputType="number"
+        android:layout_marginTop="15dip"
+        android:layout_marginBottom="30dip" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/purple_700"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:text="Añadir" />
+
+    <TextView
+        android:id="@+id/register_error"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:layout_marginBottom="40dip"
+        android:gravity="center"
+        android:textSize="20dip"
+        android:textColor="#0b84aa"/>
+
+
+</LinearLayout>

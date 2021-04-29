@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toStartOf="@+id/etPassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/etCorreo"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/password" />
 
@@ -35,11 +35,11 @@
         app:srcCompat="@drawable/climb" />
 
     <EditText
-        android:id="@+id/etUsuario"
+        android:id="@+id/etCorreo"
         android:layout_width="212dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="Correo"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/etPassword"
@@ -69,7 +69,7 @@
         android:layout_width="65dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toTopOf="@+id/etPassword"
-        app:layout_constraintEnd_toStartOf="@+id/etUsuario"
+        app:layout_constraintEnd_toStartOf="@+id/etCorreo"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
