@@ -8,11 +8,10 @@
     android:layout_margin="10dp">
 
     <androidx.cardview.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        card_view:cardCornerRadius="4dp"
+        app:cardCornerRadius="4dp"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -43,10 +42,10 @@
 
                 <TextView
                     android:id="@+id/txtdescripcion"
-                    android:hint="Descripción"
-                    android:layout_width="210dp"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
                     android:gravity="center"
-                    android:layout_height="60dp"/>
+                    android:hint="Descripción" />
 
                 <TextView
                     android:id="@+id/txtcantidad"

@@ -16,6 +16,10 @@ public class Item {
         this.id = id;
     }
 
+    public Item(){
+
+    }
+
     public String getId() {
         return id;
     }

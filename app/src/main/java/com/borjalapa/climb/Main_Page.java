@@ -1,5 +1,7 @@
 package com.borjalapa.climb;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -7,6 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.borjalapa.climb.ui.inventario.InventarioFragment;
+import com.borjalapa.climb.ui.rutas.RutasFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,7 +55,6 @@ public class Main_Page extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
         //Toolbar
         tbBarraTareas = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(tbBarraTareas);
@@ -70,11 +73,12 @@ public class Main_Page extends AppCompatActivity {
         //builder de la cabecera del materialdrawer
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(Main_Page.this)
-                .withHeaderBackground(R.mipmap.ic_launcher)
+                .withHeaderBackground(R.drawable.mountain)
                 .addProfiles(
                         new ProfileDrawerItem()
                                 .withEmail(correo)
-                                .withIcon(getResources().getDrawable(R.mipmap.ic_launcher_round))
+                                .withTextColor(Color.BLACK)
+                                .withIcon(getResources().getDrawable(R.drawable.user))
                 )
                 .build();
 
@@ -86,35 +90,52 @@ public class Main_Page extends AppCompatActivity {
                 .withToolbar(tbBarraTareas)
                 .withActionBarDrawerToggle(true)
                 .withDrawerGravity(Gravity.START)
-                .withSliderBackgroundColor(getResources().getColor(android.R.color.darker_gray))
+                .withSliderBackgroundColor(getResources().getColor(android.R.color.white))
                 .withSelectedItem(2)
                 .addDrawerItems(
                         new PrimaryDrawerItem()
                                 .withIdentifier(1)
-                                .withName("Opcion 1")
+                                .withName("Rutas")
                                 .withIcon(android.R.drawable.btn_star_big_on),
                         new PrimaryDrawerItem()
                                 .withIdentifier(2)
-                                .withName("Opcion 2")
-                                .withIcon(android.R.drawable.arrow_down_float),
+                                .withName("Inventario")
+                                .withIcon(android.R.drawable.btn_star_big_on),
                         new DividerDrawerItem(),
                         new SecondaryDrawerItem()
                                 .withIdentifier(3)
+                                .withName("Mostrar montañas"),
+                        new SecondaryDrawerItem()
+                                .withIdentifier(4)
+                                .withName("Ocultar montañas"),
+                        new SecondaryDrawerItem()
+                                .withIdentifier(5)
+                                .withName("Limpiar mapa"),
+                        new SecondaryDrawerItem()
+                                .withIdentifier(6)
+                                .withName("Configuracion")
+                                .withIcon(android.R.drawable.ic_menu_preferences),
+                        new SecondaryDrawerItem()
+                                .withIdentifier(7)
                                 .withName("Cerrar Menu")
+                                .withIcon(android.R.drawable.ic_notification_clear_all)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         switch ((int) drawerItem.getIdentifier()) {
                             case 1: {
-                                Toast.makeText(Main_Page.this, "Opcion 1 pulsada", Toast.LENGTH_SHORT).show();
+                                Intent ir_rutas = new Intent(Main_Page.this, RutasFragment.class);
+                                startActivity(ir_rutas);
                                 break;
                             }
                             case 2: {
-                                Toast.makeText(Main_Page.this, "Opcion 2 pulsada", Toast.LENGTH_SHORT).show();
+                                Intent ir_inventario = new Intent(Main_Page.this, InventarioFragment.class);
+                                startActivity(ir_inventario);
+
                                 break;
                             }
-                            case 3: {
+                            case 7: {
                                 Toast.makeText(Main_Page.this, "Cerrar Menú", Toast.LENGTH_SHORT).show();
                                 break;
                             }

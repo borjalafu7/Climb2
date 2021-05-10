@@ -60,10 +60,10 @@ public class MyAdapter2 extends RecyclerView.Adapter<com.borjalapa.climb.recycle
 
         holder.tvNombre.setText(rutas.get(i).getNombre());
         holder.tvDescripcion.setText(rutas.get(i).getDescripcion());
-        holder.tvPueblo.setText(rutas.get(i).getPueblo());
+        //holder.tvPueblo.setText(rutas.get(i).getPueblo());
         holder.tvCiudad.setText(rutas.get(i).getCiudad());
-        holder.tvComollegar.setText(rutas.get(i).getComo_llegar());
-        holder.tvUtensilios.setText(rutas.get(i).getItems());
+        //holder.tvComollegar.setText(rutas.get(i).getComo_llegar());
+        //holder.tvUtensilios.setText(rutas.get(i).getItems());
         //String url = items.get(i).getUrl_imagen();
         //Picasso.get().load(url).into(holder.ivImagen);
 
@@ -99,10 +99,10 @@ public class MyAdapter2 extends RecyclerView.Adapter<com.borjalapa.climb.recycle
 
             tvNombre = (TextView)itemView.findViewById(R.id.nombre);
             tvDescripcion = (TextView)itemView.findViewById(R.id.descripcion);
-            tvPueblo = (TextView)itemView.findViewById(R.id.pueblo);
+            //tvPueblo = (TextView)itemView.findViewById(R.id.pueblo);
             tvCiudad = (TextView)itemView.findViewById(R.id.ciudad);
-            tvComollegar = (TextView)itemView.findViewById(R.id.como_llegar);
-            tvUtensilios = (TextView)itemView.findViewById(R.id.utensilios);
+            //tvComollegar = (TextView)itemView.findViewById(R.id.como_llegar);
+            //tvUtensilios = (TextView)itemView.findViewById(R.id.utensilios);
             ivImagen = (ImageView)itemView.findViewById(R.id.imagen);
         }
     }

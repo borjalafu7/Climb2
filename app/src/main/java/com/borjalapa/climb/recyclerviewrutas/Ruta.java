@@ -26,6 +26,10 @@ public class Ruta {
         this.url_imagen = url_imagen;
     }
 
+    public Ruta(){
+
+    }
+
     public String getId() {
         return id;
     }

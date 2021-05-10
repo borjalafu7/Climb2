@@ -1,6 +1,7 @@
 package com.borjalapa.climb.recyclerviewinventario;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import static androidx.core.app.ActivityCompat.startActivityForResult;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -74,10 +77,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             }
         });
 
-        holder.tvDescripcion.setOnClickListener(new View.OnClickListener() {
+        holder.ivImagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                //startActivityForResult(intent,GALLERY_INTENT);
             }
         });
     }
@@ -101,4 +106,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             ivImagen = (ImageView)itemView.findViewById(R.id.imagen);
         }
     }
+
 }
