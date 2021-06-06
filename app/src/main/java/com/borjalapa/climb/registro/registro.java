@@ -101,7 +101,6 @@ public class registro extends AppCompatActivity {
     }
 
     public void crearUsuario(String correo,String password,String usuario){
-        Log.i("FALLO","AXSDASDX");
 
         //creando un nuevo usuario
         mAuth.createUserWithEmailAndPassword(correo,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -118,8 +117,6 @@ public class registro extends AppCompatActivity {
                     user.put("correo", correo);
                     user.put("id", id_user);
 
-
-                    Log.i("FALLO","AXSDASDX");
                     String usuarios = "usuarios";
                     // Add a new document with a generated ID
                     db.collection(usuarios).document(id_user).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -130,15 +127,12 @@ public class registro extends AppCompatActivity {
                             startActivity(ir_login);
 
                         }
-
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             Toast.makeText(registro.this,"NO se ha registrado el usuario con éxito", Toast.LENGTH_SHORT).show();
                         }
                     });
-
-
 
                 } else {
                     // If sign in fails, display a message to the user.
@@ -148,9 +142,6 @@ public class registro extends AppCompatActivity {
             }
         });
     }
-
-
-
 
 
 }

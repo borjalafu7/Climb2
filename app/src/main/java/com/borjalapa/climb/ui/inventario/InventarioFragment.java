@@ -63,7 +63,7 @@ public class InventarioFragment extends Fragment {
                     @Override
                     public void onSuccess(QuerySnapshot documentSnapshots) {
                         if (documentSnapshots.isEmpty()) {
-                            Log.d("DATOS", "onSuccess: LIST EMPTY");
+                            Log.d("DATOS", String.valueOf(documentSnapshots));
                             return;
                         } else {
 

@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -22,8 +22,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Climb">
-        <activity android:name=".add_ruta"></activity>
-
+        <activity android:name=".configuracion.configuracion"></activity>
+        <activity
+            android:name=".detalles_ruta.detalles_ruta"
+            android:label="@string/title_activity_detalles_ruta"
+            android:theme="@style/Theme.Climb.NoActionBar" />
+        <activity
+            android:name=".detalles_inventario.detalles_inventario"
+            android:label="@string/title_activity_detalles_inventario"
+            android:theme="@style/Theme.Climb.NoActionBar" />
+        <activity android:name=".add_ruta" />
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.

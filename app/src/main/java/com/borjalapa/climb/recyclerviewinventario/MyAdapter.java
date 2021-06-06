@@ -14,12 +14,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.borjalapa.climb.R;
+import com.borjalapa.climb.detalles_inventario.detalles_inventario;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,26 +68,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.tvNombre.setText(items.get(i).getNombre());
         holder.tvDescripcion.setText(items.get(i).getDescripcion());
         holder.tvCantidad.setText(""+items.get(i).getCantidad()+" unidades");
-        //String url = items.get(i).getUrl_imagen();
-        //Picasso.get().load(url).into(holder.ivImagen);
+        String url = items.get(i).getUrl_imagen();
+        Glide.with(context)
+                .load(url.toString())
+                //.fitCenter()
+                //.override(800, 400)
+                //.centerCrop()
+                .into(holder.ivImagen);
 
-
-        holder.tvNombre.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                TextView t = (TextView)view;
-                Toast.makeText(context,"Has pulsado nombre : " + t.getText().toString(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                Intent detalle_item = new Intent(context, detalles_inventario.class);
+                detalle_item.putExtra("nombre", holder.tvNombre.getText().toString().trim());
+                detalle_item.putExtra("descripcion",holder.tvDescripcion.getText().toString().trim());
+                detalle_item.putExtra("cantidad", items.get(i).getCantidad());
+                detalle_item.putExtra("imagen",url);
+                context.startActivity(detalle_item);
             }
         });
 
-        holder.ivImagen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setType("image/*");
-                //startActivityForResult(intent,GALLERY_INTENT);
-            }
-        });
     }
 
     @Override

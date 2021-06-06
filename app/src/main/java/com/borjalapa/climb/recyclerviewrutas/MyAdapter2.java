@@ -1,6 +1,7 @@
 package com.borjalapa.climb.recyclerviewrutas;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.borjalapa.climb.R;
+import com.borjalapa.climb.detalles_inventario.detalles_inventario;
+import com.borjalapa.climb.detalles_ruta.detalles_ruta;
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -23,8 +27,7 @@ import java.util.Map;
 public class MyAdapter2 extends RecyclerView.Adapter<com.borjalapa.climb.recyclerviewrutas.MyAdapter2.MyViewHolder> {
 
     Context context;
-    ArrayList<Ruta> rutas;
-    int cont;
+    ArrayList<Ruta> rutas = new ArrayList<>();
     private FirebaseFirestore db;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -60,28 +63,42 @@ public class MyAdapter2 extends RecyclerView.Adapter<com.borjalapa.climb.recycle
 
         holder.tvNombre.setText(rutas.get(i).getNombre());
         holder.tvDescripcion.setText(rutas.get(i).getDescripcion());
-        //holder.tvPueblo.setText(rutas.get(i).getPueblo());
+        holder.tvPueblo.setText(rutas.get(i).getPueblo());
         holder.tvCiudad.setText(rutas.get(i).getCiudad());
-        //holder.tvComollegar.setText(rutas.get(i).getComo_llegar());
-        //holder.tvUtensilios.setText(rutas.get(i).getItems());
-        //String url = items.get(i).getUrl_imagen();
-        //Picasso.get().load(url).into(holder.ivImagen);
+        holder.tvComollegar.setText(rutas.get(i).getComo_llegar());
+        holder.tvUtensilios.setText(rutas.get(i).getItems());
+        holder.tvLatitud.setText(rutas.get(i).getLatitud());
+        holder.tvLongitud.setText(rutas.get(i).getLongitud());
 
+        String url = rutas.get(i).getUrl_imagen();
+        Glide.with(context)
+                .load(url.toString())
+                //.fitCenter()
+                //.override(800, 400)
+                //.centerCrop()
+                .into(holder.ivImagen);
 
-        holder.tvNombre.setOnClickListener(new View.OnClickListener() {
+        Log.i("url_imagen", url);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                TextView t = (TextView)view;
-                Toast.makeText(context,"Has pulsado nombre : " + t.getText().toString(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                Intent detalle_ruta = new Intent(context, detalles_ruta.class);
+                detalle_ruta.putExtra("nombre", holder.tvNombre.getText().toString().trim());
+                detalle_ruta.putExtra("descripcion", holder.tvDescripcion.getText().toString().trim());
+                detalle_ruta.putExtra("ciudad", holder.tvCiudad.getText().toString().trim());
+                detalle_ruta.putExtra("pueblo", holder.tvPueblo.getText().toString().trim());
+                detalle_ruta.putExtra("como_llegar", holder.tvComollegar.getText().toString().trim());
+                detalle_ruta.putExtra("items", holder.tvUtensilios.getText().toString().trim());
+                detalle_ruta.putExtra("latitud", holder.tvLatitud.getText().toString().trim());
+                detalle_ruta.putExtra("longitud", holder.tvLongitud.getText().toString().trim());
+                detalle_ruta.putExtra("imagen", url);
+                context.startActivity(detalle_ruta);
             }
         });
 
-        holder.tvDescripcion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
+
     }
 
     @Override
@@ -91,7 +108,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<com.borjalapa.climb.recycle
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView tvNombre, tvDescripcion,tvPueblo,tvCiudad,tvComollegar,tvUtensilios;
+        public TextView tvNombre, tvDescripcion,tvPueblo,tvCiudad,tvComollegar,tvUtensilios,tvLatitud,tvLongitud;
         public ImageView ivImagen;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -99,11 +116,13 @@ public class MyAdapter2 extends RecyclerView.Adapter<com.borjalapa.climb.recycle
 
             tvNombre = (TextView)itemView.findViewById(R.id.nombre);
             tvDescripcion = (TextView)itemView.findViewById(R.id.descripcion);
-            //tvPueblo = (TextView)itemView.findViewById(R.id.pueblo);
+            tvPueblo = (TextView)itemView.findViewById(R.id.pueblo);
             tvCiudad = (TextView)itemView.findViewById(R.id.ciudad);
-            //tvComollegar = (TextView)itemView.findViewById(R.id.como_llegar);
-            //tvUtensilios = (TextView)itemView.findViewById(R.id.utensilios);
+            tvComollegar = (TextView)itemView.findViewById(R.id.como_llegar);
+            tvUtensilios = (TextView)itemView.findViewById(R.id.items);
             ivImagen = (ImageView)itemView.findViewById(R.id.imagen);
+            tvLatitud = (TextView) itemView.findViewById(R.id.latitud);
+            tvLongitud = (TextView) itemView.findViewById(R.id.longitud);
         }
     }
 }

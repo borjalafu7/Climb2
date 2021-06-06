@@ -6,7 +6,6 @@
     android:orientation="vertical">
 
     <EditText
-
         android:id="@+id/nombreruta"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
@@ -15,7 +14,6 @@
 
     <EditText
         android:id="@+id/descripcionruta"
-        android:layout_marginTop="15dip"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:hint="Descripcion"
@@ -27,8 +25,7 @@
         android:layout_width="fill_parent"
         android:hint="Pueblo"
         android:inputType="text"
-        android:layout_marginTop="15dip"
-        android:layout_marginBottom="30dip" />
+/>
 
     <EditText
         android:id="@+id/ciudadruta"
@@ -36,24 +33,42 @@
         android:layout_width="fill_parent"
         android:hint="Ciudad"
         android:inputType="text"
-        android:layout_marginTop="15dip"
-        android:layout_marginBottom="30dip" />
+/>
 
     <EditText
         android:id="@+id/como_llegar_ruta"
-        android:layout_marginTop="15dip"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:hint="Descripcion"
+        android:hint="Como llegar"
         android:inputType="textLongMessage" />
 
     <EditText
         android:id="@+id/itemsruta"
-        android:layout_marginTop="15dip"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:hint="Utensilios"
         android:inputType="textLongMessage" />
+
+    <EditText
+        android:id="@+id/latitudruta"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Latitud" />
+
+    <EditText
+        android:id="@+id/longitudruta"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Longitud" />
+
+    <ImageView
+        android:layout_margin="20px"
+        android:id="@+id/imagen_addruta"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_gravity="center"
+        />
 
     <Button
         android:id="@+id/btnAddRuta"
@@ -65,15 +80,13 @@
         android:paddingRight="15dip"
         android:text="Añadir" />
 
-    <TextView
-        android:id="@+id/register_error"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dip"
-        android:layout_marginBottom="40dip"
-        android:gravity="center"
-        android:textSize="20dip"
-        android:textColor="#0b84aa"/>
+    <ProgressBar
+        android:id="@+id/barra_carga"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
 
 
 </LinearLayout>

@@ -14,8 +14,10 @@ public class Ruta {
     String como_llegar;
     String items;
     String url_imagen;
+    String latitud;
+    String longitud;
 
-    public Ruta(String id, String nombre, String descripcion, String pueblo, String ciudad, String como_llegar, String items, String url_imagen) {
+    public Ruta(String id, String nombre, String descripcion, String pueblo, String ciudad, String como_llegar, String items, String url_imagen, String latitud,String longitud) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -24,6 +26,8 @@ public class Ruta {
         this.como_llegar = como_llegar;
         this.items = items;
         this.url_imagen = url_imagen;
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
     public Ruta(){
@@ -94,6 +98,22 @@ public class Ruta {
         this.url_imagen = url_imagen;
     }
 
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
     @Override
     public String toString() {
         return "Ruta{" +
@@ -105,6 +125,8 @@ public class Ruta {
                 ", como_llegar='" + como_llegar + '\'' +
                 ", items='" + items + '\'' +
                 ", url_imagen='" + url_imagen + '\'' +
+                ", latitud='" + latitud + '\'' +
+                ", longitud='" + longitud + '\'' +
                 '}';
     }
 }

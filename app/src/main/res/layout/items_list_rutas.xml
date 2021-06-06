@@ -4,34 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_margin="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="match_parent"
+        android:layout_width="239dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         app:cardCornerRadius="4dp"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            android:orientation="vertical">
 
             <ImageView
+                android:layout_marginTop="20px"
                 android:id="@+id/imagen"
                 android:layout_width="150dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher_round" />
 
             <LinearLayout
-                android:layout_width="241dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-
                 android:padding="10dp">
 
                 <TextView
@@ -54,6 +55,41 @@
                     android:layout_height="60dp"
                     android:gravity="center"
                     android:hint="Ciudad" />
+
+                <TextView
+                    android:id="@+id/pueblo"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:hint="Pueblo" />
+
+                <TextView
+                    android:id="@+id/como_llegar"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:hint="Como llegar" />
+
+                <TextView
+                    android:id="@+id/items"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:hint="Utensilios" />
+
+                <TextView
+                    android:id="@+id/latitud"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:hint="Latitud" />
+
+                <TextView
+                    android:id="@+id/longitud"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:hint="Longitud" />
 
             </LinearLayout>
 

@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.borjalapa.climb.configuracion.configuracion;
 import com.borjalapa.climb.ui.inventario.InventarioFragment;
+import com.borjalapa.climb.ui.mapa.MapaFragment;
 import com.borjalapa.climb.ui.rutas.RutasFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -91,34 +93,22 @@ public class Main_Page extends AppCompatActivity {
                 .withActionBarDrawerToggle(true)
                 .withDrawerGravity(Gravity.START)
                 .withSliderBackgroundColor(getResources().getColor(android.R.color.white))
-                .withSelectedItem(2)
+                .withSelectedItem(3)
                 .addDrawerItems(
                         new PrimaryDrawerItem()
-                                .withIdentifier(1)
-                                .withName("Rutas")
-                                .withIcon(android.R.drawable.btn_star_big_on),
-                        new PrimaryDrawerItem()
-                                .withIdentifier(2)
-                                .withName("Inventario")
-                                .withIcon(android.R.drawable.btn_star_big_on),
-                        new DividerDrawerItem(),
-                        new SecondaryDrawerItem()
                                 .withIdentifier(3)
-                                .withName("Mostrar montañas"),
-                        new SecondaryDrawerItem()
-                                .withIdentifier(4)
-                                .withName("Ocultar montañas"),
-                        new SecondaryDrawerItem()
-                                .withIdentifier(5)
-                                .withName("Limpiar mapa"),
-                        new SecondaryDrawerItem()
-                                .withIdentifier(6)
                                 .withName("Configuracion")
                                 .withIcon(android.R.drawable.ic_menu_preferences),
+                        new DividerDrawerItem(),
                         new SecondaryDrawerItem()
-                                .withIdentifier(7)
+                                .withIdentifier(4)
                                 .withName("Cerrar Menu")
-                                .withIcon(android.R.drawable.ic_notification_clear_all)
+                                .withIcon(android.R.drawable.ic_notification_clear_all),
+                        new SecondaryDrawerItem()
+                                .withIdentifier(5)
+                                .withName("Cerrar Sesión")
+                                .withIcon(android.R.drawable.ic_lock_power_off)
+
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -132,12 +122,19 @@ public class Main_Page extends AppCompatActivity {
                             case 2: {
                                 Intent ir_inventario = new Intent(Main_Page.this, InventarioFragment.class);
                                 startActivity(ir_inventario);
-
                                 break;
                             }
-                            case 7: {
-                                Toast.makeText(Main_Page.this, "Cerrar Menú", Toast.LENGTH_SHORT).show();
+                            case 3: {
+                                Intent ir_configuracion = new Intent(Main_Page.this, configuracion.class);
+                                startActivity(ir_configuracion);
+                            }
+                            case 4: {
                                 break;
+                            }
+                            case 5: {
+                                mAuth.signOut();
+                                Intent ir_inicio = new Intent(Main_Page.this, MainActivity.class);
+                                startActivity(ir_inicio);
                             }
                         }
                         return false;

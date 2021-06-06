@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:layout_marginTop="140px">
+
+    <EditText
+        android:id="@+id/edit_ruta_nombre"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Nombre"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_ruta_descripcion"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Descripcion"
+        android:inputType="textLongMessage" />
+
+    <EditText
+        android:id="@+id/edit_ruta_ciudad"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Ciudad"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_ruta_pueblo"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Pueblo"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_ruta_como_llegar"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Como llegar"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_ruta_items"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Utensilios"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_latitud"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Latitud"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_longitud"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Longitud"
+        android:inputType="text"
+        android:layout_marginBottom="30dip"/>
+
+    <ImageView
+        android:id="@+id/edit_imagen_ruta"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20px"
+        />
+
+    <ProgressBar
+        android:id="@+id/barra_progeso_ruta"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/btnEditRuta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/purple_700"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:text="Editar" />
+
+
+</LinearLayout>
